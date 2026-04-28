@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jan-Mat India | Election Guide Pro</title>
+    <meta name="description" content="Professional election education platform with dynamic interaction and state management.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Main Dashboard Screen -->
+        <section id="home-screen" class="screen active">
+            <div class="dashboard-header">
+                <div class="branding">
+                    <h1>Jan-Mat India</h1>
+                    <p class="tagline">Comprehensive Election Awareness Portal</p>
+                </div>
+
+                <!-- Progress Dashboard Card -->
+                <div class="progress-card">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+                        <div>
+                            <p style="font-size: 0.8rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px;">Overall Progress</p>
+                            <h2 id="progress-percent" style="font-size: 2.2rem;">0%</h2>
+                        </div>
+                        <p id="progress-text" style="color: var(--text-secondary); font-weight: 500;">0/7 Sections</p>
+                    </div>
+
+                    <div class="progress-bar-container">
+                        <div id="progress-fill" class="progress-bar-fill"></div>
+                    </div>
+
+                    <div class="badge-gallery" id="badge-gallery">
+                        <div class="badge-item" id="badge-started" title="Visit your first section">🥇 First Step</div>
+                        <div class="badge-item" id="badge-explorer" title="Visit 4 sections">🧠 Explorer</div>
+                        <div class="badge-item" id="badge-expert" title="Complete all sections">🏆 Expert</div>
+                        <div class="badge-item" id="badge-quiz" title="Achieve 3/3 in Quiz">👑 Quiz Master</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nav-grid">
+                <!-- All cards start without 'completed' class -->
+                <div class="nav-card" id="card-overview" onclick="openPage('overview')">
+                    <span class="status-badge">Completed ✓</span>
+                    <i class="fas fa-landmark" style="font-size: 2rem; color: var(--primary); margin-bottom: 1rem;"></i>
+                    <h3>Overview</h3>
+                    <p>The 6-step lifecycle of an election.</p>
+                </div>
+                <div class="nav-card" id="card-timeline" onclick="openPage('timeline')">
+                    <span class="status-badge">Completed ✓</span>
+                    <i class="fas fa-clock" style="font-size: 2rem; color: var(--primary); margin-bottom: 1rem;"></i>
+                    <h3>Timeline</h3>
+                    <p>Key dates and critical milestones.</p>
+                </div>
+                <div class="nav-card" id="card-scenario" onclick="openPage('scenario')">
+                    <span class="status-badge">Completed ✓</span>
+                    <i class="fas fa-lightbulb" style="font-size: 2rem; color: var(--primary); margin-bottom: 1rem;"></i>
+                    <h3>Scenarios</h3>
+                    <p>Practical solutions for polling issues.</p>
+                </div>
+                <div class="nav-card" id="card-flashcards" onclick="openPage('flashcards')">
+                    <span class="status-badge">Completed ✓</span>
+                    <i class="fas fa-clone" style="font-size: 2rem; color: var(--primary); margin-bottom: 1rem;"></i>
+                    <h3>Flash Cards</h3>
+                    <p>Rapid learning of core concepts.</p>
+                </div>
+                <div class="nav-card" id="card-role" onclick="openPage('role')">
+                    <span class="status-badge">Completed ✓</span>
+                    <i class="fas fa-user-shield" style="font-size: 2rem; color: var(--primary); margin-bottom: 1rem;"></i>
+                    <h3>Role Guide</h3>
+                    <p>Protocols for voters and candidates.</p>
+                </div>
+                <div class="nav-card" id="card-quiz" onclick="openPage('quiz')">
+                    <span class="status-badge">Completed ✓</span>
+                    <i class="fas fa-vial" style="font-size: 2rem; color: var(--primary); margin-bottom: 1rem;"></i>
+                    <h3>Knowledge Quiz</h3>
+                    <p>Validate your learning and earn badges.</p>
+                </div>
+                <div class="nav-card" id="card-faq" onclick="openPage('faq')">
+                    <span class="status-badge">Completed ✓</span>
+                    <i class="fas fa-question-circle" style="font-size: 2rem; color: var(--primary); margin-bottom: 1rem;"></i>
+                    <h3>Smart FAQ</h3>
+                    <p>Instant assistant for common queries.</p>
+                </div>
+            </div>
+
+            <footer style="margin-top: 5rem; text-align: center; color: var(--text-secondary); font-size: 0.85rem; border-top: 1px solid var(--glass-border); padding: 2.5rem 0;">
+                Built using <span style="color: var(--primary);">Google Antigravity AI</span> • Election Awareness 2026
+            </footer>
+        </section>
+
+        <!-- Dynamic Content Screen -->
+        <section id="page-screen" class="screen">
+            <div style="margin-bottom: 2rem;">
+                <button class="primary-btn" onclick="goHome()" style="background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); color: var(--text-primary);">
+                    <i class="fas fa-arrow-left" style="margin-right: 8px;"></i> Back to Dashboard
+                </button>
+                <div style="margin-top: 2rem;">
+                    <h2 id="view-title" style="font-size: 2.2rem; margin-bottom: 0.5rem;">Title</h2>
+                    <p id="view-description" style="color: var(--text-secondary); font-size: 1.1rem;">Description</p>
+                </div>
+            </div>
+
+            <div class="page-content-box" id="view-content">
+                <!-- Content injected here -->
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
