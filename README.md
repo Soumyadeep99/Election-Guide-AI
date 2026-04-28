@@ -1,110 +1,169 @@
-# 🇮🇳 Jan-Mat India | Election Guide Pro v2.0
+# 🇮🇳 Jan-Mat India | Election Guide AI
 
-![Jan-Mat India Banner](assets/banner.png)
+> An interactive AI-powered platform that simplifies the Indian election process through guided learning, real-life scenarios, gamification, and a smart FAQ chatbot.
 
-## 🎯 Project Overview
-**Jan-Mat India** is a premium, interactive election education portal designed to empower citizens with comprehensive knowledge about the Indian democratic process. Built with a modern, gamified approach, it transforms complex electoral procedures into an engaging learning journey.
+🔗 **Live Demo:** https://soumyadeep99.github.io/Election-Guide-AI/
+📂 **Repository:** https://github.com/Soumyadeep99/Election-Guide-AI
 
 ---
 
-## 🎮 Gamification & Progress System
+## 🚀 Key Features
 
-### 📊 Progress Tracking
-Tracks which sections users have visited and displays their learning progress in real-time.
-- **Tracked Sections**: Overview, Timeline, Scenarios, Role Guide, Quiz, and FAQ.
-- **Visual Display**: Animated gradient progress bar with percentage and dynamic motivation messages.
-- **Persistence**: All progress is saved in the browser's `localStorage` and persists across sessions.
+* 📊 **Progress Tracking & Achievements**
+* 🎭 **Real-Life Scenario Simulator**
+* 🧠 **Smart FAQ Chatbot (AI-based)**
+* 📝 **Interactive Quiz System (with feedback)**
+* 👤 **Role-Based Guidance (Voter/Candidate)**
+* 🎴 **Animated Flashcards for learning**
 
-### 🏆 Achievement System
-Four unique badges to unlock:
-1. 🌱 **Getting Started**: Unlocks after visiting your first section.
-2. 🧭 **Explorer**: Earned after exploring 3 or more sections.
-3. 🏅 **Election Learner**: Awarded upon visiting all 6 modules.
-4. 👑 **Quiz Master**: The ultimate prize for scoring 80% (4/5) or higher on the Knowledge Quiz.
+---
+
+## 🧠 How It Works (Quick View)
+
+```text
+User → Select Feature → AI Prompt → Structured Response → Visual UI
+```
+
+* Built using **Google Antigravity AI**
+* Uses **prompt engineering instead of heavy ML models**
+* Focuses on **clarity, usability, and interaction**
+
+---
+
+## 🎮 Gamified Learning Experience
+
+* Tracks user progress across sections
+* Unlocks achievements dynamically
+* Motivates users to complete all modules
+
+🏆 Example Badges:
+
+* 🌱 Getting Started
+* 🧭 Explorer
+* 🏅 Election Learner
+* 👑 Quiz Master
+
+---
+
+## 🎭 Scenario Simulator
+
+Real-world election situations explained clearly:
+
+* What if I don’t vote?
+* What if EVM fails?
+* What if my name is not in voter list?
+
+👉 Each scenario provides:
+
+* Explanation
+* Step-by-step outcome
+* What you should do
 
 ---
 
 ## 🧠 Smart FAQ Chatbot
-![FAQ Chatbot Preview](assets/chatbot.png)
 
-A fully functional, intelligent assistant for election queries:
-- **Smart Filtering**: Detects general election intent and declines unrelated queries.
-- **Rich Knowledge Base**: Detailed bulleted answers for **EVM, NOTA, Voter ID, ECI,** and **Counting Process**.
-- **User-Friendly UX**: Features "Thinking..." states, auto-scroll, and message pop animations.
+* Answers election-related questions
+* Uses smart filtering (rejects unrelated queries)
+* Provides structured bullet-point responses
 
----
+✔ Example:
 
-## 📝 Knowledge Quiz System
-Test your mastery with a comprehensive 5-question assessment:
-- **Topic Tags**: Shows categories like Voter Eligibility, Election Rules, etc.
-- **Intelligent Feedback**: 5 tiers of feedback based on your score (100% to 0%).
-- **Smart Recommendations**: Suggests specific sections to review based on your performance.
+* What is EVM?
+* What is NOTA?
+* How are votes counted?
 
 ---
 
-## 🚀 Quick Start Guide
+## 📝 Quiz System
 
-### 📱 Getting Started
-1. **Clone & Open**: Clone the repo and open `index.html` in any modern web browser.
-2. **Dashboard**: Use the main hub to track progress and see your unlocked badges.
-3. **Launch Scripts**:
-   - `run_app.bat`: Quick Windows launcher.
-   - `server.bat`: Starts a local development server.
+* Multiple-choice questions
+* Score calculation
+* Feedback + improvement suggestions
 
-### 💾 Data Storage
-- **Method**: HTML5 `localStorage`.
-- **Key**: `janMatState`.
-- **Reset**: To start over, clear your browser data or delete the `janMatState` key in DevTools.
+👉 Example Output:
+
+```text
+Your Score: 4/5  
+Feedback: Great! You have strong understanding of elections.
+```
+
+---
+
+## 🎨 UI & Experience
+
+* Modern **glassmorphism design**
+* Smooth animations & transitions
+* Mobile responsive layout
+* Clean and intuitive navigation
+
+---
+
+## 🛠️ Tech Stack
+
+* HTML5
+* CSS3 (Glassmorphism + Animations)
+* JavaScript (ES6)
+* Google Antigravity AI
 
 ---
 
 ## 📁 Project Structure
+
 ```text
-election/
-├── 📄 index.html          # Main application structure
-├── 🔧 script.js           # Core logic (Gamification, Quiz, Chatbot)
-├── 🎨 style.css           # Premium styling & Animations
-├── 🚀 run_app.bat         # Launcher script
-├── 🖥️ server.bat          # Local server script
-└── 📁 assets/             # Images, Icons, and Visuals
+Election-Guide-AI/
+├── index.html
+├── style.css
+├── script.js
+├── assets/
+└── README.md
 ```
 
 ---
 
-## 🔧 Technical Documentation
+## 📸 Screenshots
 
-### Architecture
-- **Tech Stack**: Vanilla JavaScript (ES6+), CSS3, HTML5.
-- **Persistence**: No backend required; uses `localStorage` for all state management.
-- **UI System**: Modern dark-mode aesthetic with Glassmorphism and CSS Animations.
+### 🏠 Home Dashboard
 
-### Core State Logic
-```javascript
-const gameState = {
-    visited: new Set(),      // Sections visited
-    achievements: new Set(), // Badges unlocked
-    quizHighScore: 0,        // Best quiz score
-    totalSections: 6         // Total sections available
-};
-```
+![Home](assets/banner.png)
 
-### Key Functions
-- `initStorage()`: Loads saved state from browser storage.
-- `updateProgressUI()`: Updates all bars, percentages, and badges.
-- `openPage(view)`: Tracks visits and triggers achievement checks.
-- `sendChat()`: Handles FAQ input, intent detection, and bot responses.
-- `finishQuiz()`: Calculates score and provides personalized feedback.
+### 🧠 FAQ Chatbot
+
+![Chatbot](assets/chatbot.png)
 
 ---
 
-## 🔮 Roadmap
-- [ ] **Leaderboards**: Social competition for learners.
-- [ ] **Daily Challenges**: Encouraging consistent engagement.
-- [ ] **Certification**: Digital certificates for completing all modules.
-- [ ] **Voice Support**: Narration for all educational content.
+## 📌 Problem
+
+Many citizens, especially first-time voters, lack clear understanding of the election process in India.
 
 ---
 
-## 👨‍💻 Built with ❤️ using [Google Antigravity AI](https://github.com/google/antigravity)
+## 💡 Solution
 
-**Jan-Mat India** is more than just an app; it's a step toward a more informed and active democracy. **Happy Learning!** 🎓
+Jan-Mat India provides a **simple, interactive, and engaging learning platform** to make election knowledge accessible to everyone.
+
+---
+
+## 🔮 Future Scope
+
+* 🌐 Multi-language support
+* 🏆 Leaderboards & competition
+* 🎤 Voice interaction
+* 📜 Certification system
+
+---
+
+## 👨‍💻 Author
+
+**Soumyadeep Jana**
+
+---
+
+## ❤️ Built With
+
+Built using **Google Antigravity AI** with prompt engineering and interactive UI design.
+
+---
+
+⭐ If you like this project, consider giving it a star!
