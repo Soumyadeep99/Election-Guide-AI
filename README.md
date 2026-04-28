@@ -2,95 +2,106 @@
 
 ![Jan-Mat India Banner](assets/banner.png)
 
-## 🎯 Overview
+## 🎯 Project Overview
 **Jan-Mat India** is a premium, interactive election education portal designed to empower citizens with comprehensive knowledge about the Indian democratic process. Built with a modern, gamified approach, it transforms complex electoral procedures into an engaging learning journey.
 
 ---
 
-## 🎮 Key Features
+## 🎮 Gamification & Progress System
 
-### 📊 Real-Time Progress Tracking
-- **Interactive Dashboard**: Monitor your learning journey with a dynamic, animated progress bar.
-- **Section Persistence**: Automatically tracks visits across 6 core sections: Overview, Timeline, Scenarios, Role Guide, Quiz, and FAQ.
-- **Dynamic Motivation**: Context-aware messages that encourage you as you advance from "Getting Started" to "Election Expert."
+### 📊 Progress Tracking
+Tracks which sections users have visited and displays their learning progress in real-time.
+- **Tracked Sections**: Overview, Timeline, Scenarios, Role Guide, Quiz, and FAQ.
+- **Visual Display**: Animated gradient progress bar with percentage and dynamic motivation messages.
+- **Persistence**: All progress is saved in the browser's `localStorage` and persists across sessions.
 
 ### 🏆 Achievement System
-Unlock four distinct milestone badges as you learn:
-- 🌱 **Getting Started**: Earned after your first section visit.
-- 🧭 **Explorer**: Unlocked after exploring 3 different modules.
-- 🏅 **Election Learner**: Awarded upon completing the entire curriculum.
-- 👑 **Quiz Master**: The ultimate prize for scoring 80% or higher in the final assessment.
+Four unique badges to unlock:
+1. 🌱 **Getting Started**: Unlocks after visiting your first section.
+2. 🧭 **Explorer**: Earned after exploring 3 or more sections.
+3. 🏅 **Election Learner**: Awarded upon visiting all 6 modules.
+4. 👑 **Quiz Master**: The ultimate prize for scoring 80% (4/5) or higher on the Knowledge Quiz.
 
-### 🧠 Smart FAQ Chatbot
+---
+
+## 🧠 Smart FAQ Chatbot
 ![FAQ Chatbot Preview](assets/chatbot.png)
-- **Intelligent Assistant**: A fully functional chatbot that handles election-related queries with intent detection.
-- **Structured Answers**: Provides clear, bullet-point explanations for common topics like EVM, NOTA, Voter ID, and the counting process.
-- **Smart Fallbacks**: Suggests related topics if a specific answer isn't available, ensuring a continuous learning loop.
 
-### 📝 Enhanced Knowledge Quiz
-- **Topic-Based Assessment**: 5 comprehensive questions covering critical election concepts.
-- **Personalized Feedback**: 5 tiers of scoring feedback with star ratings and tailored improvement tips.
-- **Topic Recommendations**: Smart suggestions on which sections to review based on your performance.
+A fully functional, intelligent assistant for election queries:
+- **Smart Filtering**: Detects general election intent and declines unrelated queries.
+- **Rich Knowledge Base**: Detailed bulleted answers for **EVM, NOTA, Voter ID, ECI,** and **Counting Process**.
+- **User-Friendly UX**: Features "Thinking..." states, auto-scroll, and message pop animations.
+
+---
+
+## 📝 Knowledge Quiz System
+Test your mastery with a comprehensive 5-question assessment:
+- **Topic Tags**: Shows categories like Voter Eligibility, Election Rules, etc.
+- **Intelligent Feedback**: 5 tiers of feedback based on your score (100% to 0%).
+- **Smart Recommendations**: Suggests specific sections to review based on your performance.
 
 ---
 
 ## 🚀 Quick Start Guide
 
-### Installation
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Soumyadeep99/Election-Guide-AI.git
-   ```
-2. Navigate to the project folder and open `index.html` in any modern web browser.
+### 📱 Getting Started
+1. **Clone & Open**: Clone the repo and open `index.html` in any modern web browser.
+2. **Dashboard**: Use the main hub to track progress and see your unlocked badges.
+3. **Launch Scripts**:
+   - `run_app.bat`: Quick Windows launcher.
+   - `server.bat`: Starts a local development server.
 
-### Development & Testing
-- Use `run_app.bat` to launch the application locally.
-- Use `server.bat` to start a local development server.
-- Progress is saved automatically in your browser's `localStorage` (Key: `janMatState`).
+### 💾 Data Storage
+- **Method**: HTML5 `localStorage`.
+- **Key**: `janMatState`.
+- **Reset**: To start over, clear your browser data or delete the `janMatState` key in DevTools.
 
 ---
 
 ## 📁 Project Structure
 ```text
 election/
-├── 📄 index.html          # Main application UI & Structure
-├── 🔧 script.js           # Core logic, Gamification, and Chatbot
+├── 📄 index.html          # Main application structure
+├── 🔧 script.js           # Core logic (Gamification, Quiz, Chatbot)
 ├── 🎨 style.css           # Premium styling & Animations
-├── 📁 assets/             # Images, Icons, and Media
-└── 📚 docs/               # Detailed technical and user guides
-    ├── GAMIFICATION_FEATURES.md
-    ├── IMPLEMENTATION_SUMMARY.md
-    ├── PROJECT_STRUCTURE.md
-    ├── QUICK_START_GUIDE.md
-    └── TECHNICAL_DOCS.md
+├── 🚀 run_app.bat         # Launcher script
+├── 🖥️ server.bat          # Local server script
+└── 📁 assets/             # Images, Icons, and Visuals
 ```
 
 ---
 
-## 🔧 Technical Overview
-- **Core**: Vanilla JavaScript (ES6+), HTML5, CSS3.
-- **Styling**: Modern CSS with Glassmorphism, CSS Animations, and Responsive Grid Layouts.
-- **State Management**: Robust client-side state handling with `localStorage` persistence.
-- **Icons**: Font Awesome 6.4.0 integration.
-- **Design System**: A harmonious palette of **Saffron (#FF9933)**, **White**, and **Green (#138808)**.
+## 🔧 Technical Documentation
+
+### Architecture
+- **Tech Stack**: Vanilla JavaScript (ES6+), CSS3, HTML5.
+- **Persistence**: No backend required; uses `localStorage` for all state management.
+- **UI System**: Modern dark-mode aesthetic with Glassmorphism and CSS Animations.
+
+### Core State Logic
+```javascript
+const gameState = {
+    visited: new Set(),      // Sections visited
+    achievements: new Set(), // Badges unlocked
+    quizHighScore: 0,        // Best quiz score
+    totalSections: 6         // Total sections available
+};
+```
+
+### Key Functions
+- `initStorage()`: Loads saved state from browser storage.
+- `updateProgressUI()`: Updates all bars, percentages, and badges.
+- `openPage(view)`: Tracks visits and triggers achievement checks.
+- `sendChat()`: Handles FAQ input, intent detection, and bot responses.
+- `finishQuiz()`: Calculates score and provides personalized feedback.
 
 ---
 
-## 📖 Documentation
-For more in-depth information, please refer to our comprehensive documentation:
-- 🎮 [**Gamification Features**](GAMIFICATION_FEATURES.md): Deep dive into the progress and achievement mechanics.
-- 🚀 [**Quick Start Guide**](QUICK_START_GUIDE.md): Detailed user instructions and FAQ.
-- 🛠️ [**Technical Docs**](TECHNICAL_DOCS.md): Architecture overview and API reference for developers.
-- 📁 [**Project Structure**](PROJECT_STRUCTURE.md): Detailed file-by-file breakdown.
-- ✅ [**Implementation Summary**](IMPLEMENTATION_SUMMARY.md): Final checklist and feature status.
-
----
-
-## 🔮 Future Roadmap
-- [ ] **Leaderboards**: Compete with other learners globally.
-- [ ] **Daily Streaks**: Rewards for consistent daily learning.
-- [ ] **Certification**: Downloadable certificates for Election Experts.
-- [ ] **Difficulty Levels**: Adaptive quiz challenges (Easy, Medium, Hard).
+## 🔮 Roadmap
+- [ ] **Leaderboards**: Social competition for learners.
+- [ ] **Daily Challenges**: Encouraging consistent engagement.
+- [ ] **Certification**: Digital certificates for completing all modules.
+- [ ] **Voice Support**: Narration for all educational content.
 
 ---
 
